@@ -1,0 +1,11 @@
+#!/bin/bash
+#PBS -l nodes=2:ppn=28
+#PBS -N my_hw1_job
+#PBS -q short
+
+module load shared
+module load mvapich2/gcc/64/2.2rc1
+
+cd$HOME
+
+mpirun -np 14 ./hellosinorder > /gpfs/home/adpollack/hw1.txt
